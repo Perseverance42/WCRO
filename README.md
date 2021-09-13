@@ -1,6 +1,6 @@
 # WCRO
 
-Wrapped CRO is a direct fork of [WETH10](https://github.com/WETH10/WETH10) and was specificially adjusted to be used as a ERC20-Wrapper for Crypto.com Coin, the native token of the Cronos blockchain.
+Wrapped CRO is a direct fork of [WETH10](https://github.com/WETH10/WETH10) and was adjusted to be used as a ERC20-wrapper for Crypto.com Coin on the Cronos blockchain.
 
 
 ## Total Supply
