@@ -34,7 +34,7 @@
     "ethereumjs-util": "^7.0.3",
     "ethers": "^5.0.7",
     "ganache-time-traveler": "^1.0.14",
-    "hardhat": "^2.0.6",
+    "hardhat": "^2.6.4",
     "hardhat-deploy": "^0.7.0-beta.39",
     "hardhat-gas-reporter": "^1.0.4",
     "mocha": "^7.1.0",
