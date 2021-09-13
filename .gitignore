@@ -131,3 +131,5 @@ crytic-export/
 
 # JetBrains
 .idea
+package-lock.json
+deployments/localhost/
