@@ -17,17 +17,6 @@ task(TASK_COMPILE_GET_COMPILER_INPUT).setAction(async (_, bre, runSuper) => {
   return input;
 })
 
-
-function nodeUrl(network) {
-  let infuraKey
-  try {
-    infuraKey = fs.readFileSync(path.resolve(__dirname, '.infuraKey')).toString().trim()
-  } catch(e) {
-    infuraKey = ''
-  }
-  return `https://${network}.infura.io/v3/${infuraKey}`
-}
-
 let mnemonic = process.env.MNEMONIC;
 if (!mnemonic) {
   try {
@@ -38,36 +27,12 @@ const accounts = mnemonic ? {
   mnemonic,
 }: undefined;
 
-let etherscanKey = process.env.ETHERSCANKEY;
-if (!etherscanKey) {
-  try {
-    etherscanKey = fs.readFileSync(path.resolve(__dirname, '.etherscanKey')).toString().trim()
-  } catch(e){}
-}
-
 module.exports = {
   defaultNetwork: 'hardhat',
   networks: {
-    kovan: {
+    testnet: {
       accounts,
-      url: nodeUrl('kovan'),
-      gasPrice: 100000000000
-    },
-    goerli: {
-      accounts,
-      url: nodeUrl('goerli'),
-    },
-    rinkeby: {
-      accounts,
-      url: nodeUrl('rinkeby')
-    },
-    ropsten: {
-      accounts,
-      url: nodeUrl('ropsten')
-    },
-    mainnet: {
-      accounts,
-      url: nodeUrl('mainnet'),
+      url: 'https://cronos-testnet.crypto.org:8545',
       gasPrice: 80000000000,
       gasLimit: 2500000000,
     },
@@ -86,9 +51,6 @@ module.exports = {
   },
   gasReporter: {
     enabled: true,
-  },
-  etherscan: {
-    apiKey: etherscanKey
   },
   paths: {
     sources: './contracts',
